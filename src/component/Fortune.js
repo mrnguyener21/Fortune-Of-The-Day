@@ -2,8 +2,8 @@ import React from 'react';
 
 class Fortunes extends React.Component{
     state={
-        number: 0,
-        fortunes: null,
+        number: null,
+        fortunes:'Your Fortune Awaits',
     };
 
     fortuneOptions = {
@@ -11,16 +11,30 @@ class Fortunes extends React.Component{
         fortune2: 'there is always light at the end of the tunnel',
         fortune3: 'sometimes the person we are looking for the most is ourself'
     };
-    number = () => this.setState({number:Math.floor(Math.random()*3+1)}); 
-    // increment = this.setState({number:this.state.number +1});
-    
-    
+    number = () => {
+        this.setState({number:Math.floor(Math.random()*3+1)});
+        
+        const fortune = () => {
+            if(this.state.number === 1){
+                this.setState({fortunes: this.fortuneOptions.fortune1});
+            }else if(this.state.number === 2){
+                this.setState({fortunes: this.fortuneOptions.fortune2});
+            }else if(this.state.number === 3){
+                this.setState({fortunes:this.fortuneOptions.fortune3});
+            }else{
+                this.setState({fortunes:'Your Fortune Awaits'});
+            };
+        };
+        fortune();
+    }
+
+
     render(){
         return(
             <>
-                <button onClick={this.number}>CLICK</button>   
-                <h1>{this.state.number}</h1>
                 <h1>{this.state.fortunes}</h1>
+                <button onClick={this.number}>CLICK</button>   
+
             </>
         )
     }
