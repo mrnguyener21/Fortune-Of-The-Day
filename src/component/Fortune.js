@@ -1,9 +1,10 @@
 import React from 'react';
+import styles from './fortune.module.css';
 
 class Fortunes extends React.Component{
     state={
         number: null,
-        fortunes:'Your Fortune Awaits',
+        fortunes: null,
     };
 
     fortuneOptions = {
@@ -22,18 +23,17 @@ class Fortunes extends React.Component{
             }else if(this.state.number === 3){
                 this.setState({fortunes:this.fortuneOptions.fortune3});
             }else{
-                this.setState({fortunes:'Your Fortune Awaits'});
+                this.setState({fortunes:null});
             };
         };
         fortune();
     }
 
-
     render(){
         return(
             <>
-                <h1>{this.state.fortunes}</h1>
-                <button onClick={this.number}>CLICK</button>   
+                <h1 className={styles.fortune}>{this.state.fortunes}</h1>
+                <button className={styles.button}onClick={this.number}>CLICK</button>   
 
             </>
         )
