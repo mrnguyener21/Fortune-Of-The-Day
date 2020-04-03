@@ -33,7 +33,7 @@ class Fortunes extends React.Component{
         return(
             <>
                 <h1 className={styles.fortune}>{this.state.fortunes}</h1>
-                <button className={styles.button}onClick={this.number}>CLICK</button>   
+                <button className={styles.button}onClick={this.number}>FORTUNE</button>   
 
             </>
         )

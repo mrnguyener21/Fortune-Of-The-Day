@@ -1,11 +1,22 @@
+body{
+    background-image: url('../src/component/image/background.jpg');
+    background-size: cover;
+}
 .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    padding-top: 4%;
+    padding-top: 1%;
+    color: rgb(24, 23, 23)
 }
 
 .title{
-    border: solid;
+    font-size: 7vh;
+    text-decoration: underline;
+    margin-bottom: 5%;
+}
+
+.fortuneCookie{
+    margin-bottom: 3%;
 }
